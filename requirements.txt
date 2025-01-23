@@ -1,4 +1,3 @@
---upgrade pip
 gdown==4.0.0
 requests==2.25.1
 streamlit==1.14.0
