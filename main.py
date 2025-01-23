@@ -22,7 +22,7 @@ def download_file_from_google_drive(file_id, output_file):
             st.success(f"{output_file} downloaded successfully.")
 
 # Download required files
-download_file_from_google_drive("11XNX6w4f9a5JiPy5E-NTwpfyv1hyyzspW", "similarity.pkl")
+download_file_from_google_drive("1XNX6w4f9a5JiPy5E-NTwpfyv1hyyzspW", "similarity.pkl")
 download_file_from_google_drive("<FILE_ID_FOR_MOVIE_TITLES>", "movie_titles (1)")
 
 def fetch_poster(movie_id):
