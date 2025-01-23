@@ -85,4 +85,4 @@ if st.button("Search"):
         st.warning("No recommendations available for the selected movie. Please try a different movie.")
 
 st.markdown("---")
-st.text("Developed by Gokul using Streamlit and TMDB API")
+st.text("Developed by Gokul")
