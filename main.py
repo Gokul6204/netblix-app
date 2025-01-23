@@ -13,7 +13,6 @@ API_KEY = "8c67ffa31c5f2b01ea4fe075b4ff8ce4"
 TMDB_POSTER_BASE_URL = "http://image.tmdb.org/t/p/w500/"
 PLACEHOLDER_IMAGE_URL = "https://via.placeholder.com/500x750?text=No+Poster+Available"
 
-# Function to download files from Google Drive
 def download_file_from_google_drive(file_id, output_file):
     file_url = f"https://drive.google.com/uc?id={file_id}"
     if not os.path.exists(output_file):
@@ -21,9 +20,8 @@ def download_file_from_google_drive(file_id, output_file):
             gdown.download(file_url, output_file, quiet=False)
             st.success(f"{output_file} downloaded successfully.")
 
-# Download required files
 download_file_from_google_drive("1XNX6w4f9a5JiPy5E-NTwpfyv1hyyzspW", "similarity.pkl")
-download_file_from_google_drive("<FILE_ID_FOR_MOVIE_TITLES>", "movie_titles (1)")
+download_file_from_google_drive("id", "movie_titles (1)")
 
 def fetch_poster(movie_id):
     url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key={API_KEY}&language=en-US"
