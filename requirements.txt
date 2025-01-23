@@ -3,3 +3,4 @@ pandas
 numpy
 matplotlib
 setuptools>=65.5.1
+gdown
