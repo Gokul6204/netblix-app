@@ -49,7 +49,6 @@ def recommend(movie, movie_list, similarity):
         st.error("Movie not found in the database. Please try another movie.")
         return [], []
 
-@st.cache_resource
 def load_data():
     try:
         movie_list = pickle.load(open("movie_titles (1)", "rb"))
