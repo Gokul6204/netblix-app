@@ -40,7 +40,7 @@ def recommend(movie, movie_list, similarity):
         
         recommended_movies_name = []
         recommended_movies_poster = []
-        for i in similar_movies[0:21]:
+        for i in similar_movies[0:20]:
             movie_id = movie_list.iloc[i[0]].id
             recommended_movies_poster.append(fetch_poster(movie_id))
             recommended_movies_name.append(movie_list.iloc[i[0]].title)
@@ -71,7 +71,7 @@ if st.button("Search"):
     recommended_movies_poster, recommended_movies_name = recommend(selected_movie_name, movie_list, similarity)
     
     if recommended_movies_name:
-        num_columns = 5
+        num_columns = 4
         rows = math.ceil(len(recommended_movies_name) / num_columns)
         for row in range(rows):
             cols = st.columns(num_columns)
@@ -80,7 +80,7 @@ if st.button("Search"):
                 if movie_index < len(recommended_movies_name):
                     with cols[col_index]:
                         st.image(recommended_movies_poster[movie_index], use_container_width=True)
-                        st.caption(recommended_movies_name[movie_index])
+                        st.subheader(recommended_movies_name[movie_index])
     else:
         st.warning("No recommendations available for the selected movie. Please try a different movie.")
 
