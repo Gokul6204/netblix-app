@@ -40,7 +40,7 @@ def recommend(movie, movie_list, similarity):
         
         recommended_movies_name = []
         recommended_movies_poster = []
-        for i in similar_movies[1:21]:
+        for i in similar_movies[0:21]:
             movie_id = movie_list.iloc[i[0]].id
             recommended_movies_poster.append(fetch_poster(movie_id))
             recommended_movies_name.append(movie_list.iloc[i[0]].title)
