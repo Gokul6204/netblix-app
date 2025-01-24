@@ -53,7 +53,7 @@ def recommend(movie, movie_list, similarity):
 def load_data():
     try:
         movie_list = pickle.load(open("movie_titles (1)", "rb"))
-        similarity = pickle.load(open("similarity.pkl", "rb"))
+        similarity = pickle.load(open("movie_recommondation_model.pkl", "rb"))
         return movie_list, similarity
     except FileNotFoundError:
         st.error("Required data files not found. Please ensure the data files are available.")
