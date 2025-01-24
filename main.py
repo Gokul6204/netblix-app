@@ -20,7 +20,7 @@ def download_file_from_google_drive(FILE_ID, output_file):
             gdown.download(file_url, output_file, quiet=False)
             st.success(f"{output_file} downloaded successfully.")
 
-download_file_from_google_drive("1f_BaefMswB-20x3V7D9GCQ5JUHjecPg7", "movie_recommondation_model.pkl")
+download_file_from_google_drive("1XNX6w4f9a5JiPy5E-NTwpfyv1hyyzspW", "similarity.pkl")
 
 def fetch_poster(movie_id):
     url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key={API_KEY}&language=en-US"
@@ -53,7 +53,7 @@ def recommend(movie, movie_list, similarity):
 def load_data():
     try:
         movie_list = pickle.load(open("movie_titles (1)", "rb"))
-        similarity = pickle.load(open("movie_recommondation_model.pkl", "rb"))
+        similarity = pickle.load(open("similarity.pkl", "rb"))
         return movie_list, similarity
     except FileNotFoundError:
         st.error("Required data files not found. Please ensure the data files are available.")
